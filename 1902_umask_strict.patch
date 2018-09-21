@@ -3,8 +3,8 @@ From: =?UTF-8?q?Micka=C3=ABl=20Sala=C3=BCn?= <clipos@ssi.gouv.fr>
 Date: Thu, 7 Mar 2013 12:06:39 +0100
 Subject: [PATCH 29/32] clip: fs: Set default umask to 0077
 
-There is multiple entry points handling their own umask:
-* the kernel (this patch)
+Il y a plusieurs points d'entrée qui gèrent leur propre umask :
+* le noyau (ce patch)
 * PAM
 * clip-lib (e.g. vsctl enter)
 * init scripts
