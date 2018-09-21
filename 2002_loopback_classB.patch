@@ -3,8 +3,8 @@ From: Vincent Strubel <clipos@ssi.gouv.fr>
 Date: Mon, 5 Mar 2012 18:26:12 +0100
 Subject: [PATCH 31/32] clip: net: Make 127.0.0.1/16, rather than /8
 
-Make 127.0.0.1/16, rather than /8, the default loopback network, thus
-freeing some local addresses for other contexts.
+Faire 127.0.0.0.1/16, plutôt que /8, le réseau en boucle par défaut, 
+libérant ainsi certaines adresses locales pour d'autres contextes.
 
 Patch: 2002_loopback_classB.patch
 ---
