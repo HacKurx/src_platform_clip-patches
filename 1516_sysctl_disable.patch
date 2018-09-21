@@ -3,13 +3,13 @@ From: Vincent Strubel <clipos@ssi.gouv.fr>
 Date: Fri, 29 Feb 2008 19:12:20 +0100
 Subject: [PATCH 16/32] clip: sysctl: Remove hotlug, vshelper and vdso_enabled
 
-Remove the following 'dangerous' sysctl entries:
+Supprimez les entrées sysctl 'dangereuses' suivantes :
   - kernel.vshelper
   - kernel.hotlug
   - vm.vdso_enabled
 
-WARNING: Description used to mention kernel.suid_dumpable but that seems
-to be outdated if trusting the patch itself.
+ATTENTION : La description mentionnait kernel.suid_dumpable mais 
+cela semble dépassé si l'on fait confiance au patch lui-même.
 
 Patch: 1516_sysctl_disable.patch
 ---
