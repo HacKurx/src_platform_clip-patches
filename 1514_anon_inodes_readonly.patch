@@ -4,12 +4,12 @@ Date: Mon, 17 Dec 2007 20:09:13 +0100
 Subject: [PATCH 14/32] clip: fs: Mount the anonymous inode FS as
  RDONLY|NOATIME|NOLOCK
 
-Make anonymous inodes readonly and affect them noatime and nolock (when
-supported) mount flags
+Rendre les inodes anonymes en lecture seule et 
+les affecter noatime et nolock (si supporté) en drapeaux de montage
 
-Mount the anonymous inode FS as RDONLY|NOATIME|NOLOCK, and make the
-anonymous inode IMMUTABLE, to avoid creating a communication channel
-between jails.
+Montez l'inode anonyme FS comme RDONLY|NOATIME|NOLOCK, et faites la commande
+inode anonyme IMMUTABLE, pour éviter de créer un canal de communication
+entre les prisons.
 
 Patch: 1514_anon_inodes_readonly.patch
 ---
