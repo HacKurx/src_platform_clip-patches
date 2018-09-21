@@ -4,7 +4,7 @@ Date: Tue, 22 Oct 2013 18:48:22 +0200
 Subject: [PATCH 26/32] clip: firmware: Add firmware for the Freescale iMX6
  SDMA ARM board
 
-Missing firmware for ARM board Freescale iMX6 SDMA in vanilla sources.
+Firmware manquant pour la carte ARM Freescale iMX6 SDMA dans les sources vanille.
 
 Patch: 1710_ARM_imx6q_sdma_firmware.patch
 ---
