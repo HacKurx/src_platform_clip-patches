@@ -3,8 +3,7 @@ From: Thibaut Sautereau <clipos@ssi.gouv.fr>
 Date: Wed, 25 Jul 2018 14:09:34 +0200
 Subject: [PATCH 09/32] clip: vserver/grsec: Fix lockref access operations
 
-grsecurity uses atomic helpers to handle lockrefs, so patch VServer
-hunks to use that too.
+grsecurity utilise des aides atomiques pour gérer les lockrefs, donc patcher les VServer hunks pour utiliser cela aussi.
 
 Patch: 1508_vserver_grsec_lockref-fixes.patch
 ---
