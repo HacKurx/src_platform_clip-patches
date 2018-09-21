@@ -4,7 +4,7 @@ Date: Mon, 19 Mar 2012 14:20:42 +0100
 Subject: [PATCH 22/32] clip: grsec: Reduce GRKERNSEC_BRUTE user ban to 30
  seconds
 
-Reduce GRKERNSEC_BRUTE user ban from 15 minutes to 30 seconds.
+Réduire l'interdiction d'utilisateur GRKERNSEC_BRUTE de 15 minutes à 30 secondes.
 
 Patch: 1522_grsec_brute_timeout.patch
 ---
