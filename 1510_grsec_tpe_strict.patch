@@ -4,9 +4,9 @@ Date: Mon, 1 Jan 2007 00:00:00 +0200
 Subject: [PATCH 10/32] clip: grsec: Add stricter TPE mode to grsec's
  implementation
 
-Strict Trusted Path Execution: The TPE restrictions will be enforced on
-all users, _including_ root, who will be unable to (directly) execute
-anything that could be written to by any other user.
+Exécution stricte du chemin de confiance : Les restrictions TPE seront appliquées 
+à tous les utilisateurs, y compris root, qui ne pourront pas exécuter (directement) 
+ce qui pourrait être écrit par un autre utilisateur.
 
 Patch: 1510_grsec_tpe_strict.patch
 ---
