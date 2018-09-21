@@ -3,16 +3,16 @@ From: Vincent Strubel <clipos@ssi.gouv.fr>
 Date: Wed, 5 Mar 2008 20:26:11 +0100
 Subject: [PATCH 28/32] clip: fs: Support for O_MAYEXEC flag for sys_open()
 
-Add support for a O_MAYEXEC flag on sys_open(). When this flag is
-passed, sys_open will check that the mount options for the underlying
-vfsmount do not prevent execution. This may allow an interpreter to
-check exec permissions before reading commands from a file, and thus
-enforce W^X at their level.
+Ajout du support d'un drapeau O_MAYEXEC sur sys_open(). 
+Lorsque cet indicateur est passé, sys_open vérifiera que les options de montage 
+pour le vfsmount sous-jacent n'empêchent pas son exécution. 
+Cela peut permettre à un interpréteur de vérifier les permissions exécutables 
+avant de lire les commandes d'un fichier, et donc d'appliquer W^X à leur niveau.
 
-WARNING: The value of O_MAYEXEC is the same as __FMODE_EXEC since commit
-55ec82176eca which appeared upstream in 2009. Due to the purpose and
-current use of __FMODE_EXEC, this is not an issue for now but should
-still be kept in mind.
+ATTENTION : La valeur de O_MAYEXEC est la même que __FMODE_EXEC depuis le 
+commit 55ec82176eca qui est apparu en amont en 2009. 
+En raison d'être et de l'objectif de l'utilisation actuelle de __FMODE_EXEC, 
+ce n'est pas un problème pour l'instant mais il ne faut pas l'oublier.
 
 Patch: 1901_open_mayexec.patch
 ---
