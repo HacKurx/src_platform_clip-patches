@@ -4,7 +4,7 @@ Date: Thu, 6 Sep 2012 18:31:47 +0200
 Subject: [PATCH 23/32] clip: drivers: Check for CAP_SYS_RAWIO before allowing
  any PCI configuration
 
-Inspired by http://lkml.org/lkml/2012/9/4/220
+Inspiré par http://lkml.org/lkml/2012/9/4/220
 
 Patch: 1523_extra_rawio_checks.patch
 ---
