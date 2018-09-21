@@ -6,12 +6,11 @@ MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 
-Experimental port of the VServer patch vs2.3.8.4 on top of grsecurity
-from Linux 4.1.18 to 4.9.
+Port expÃ©rimental du patch VServer vs2.3.8.4 en plus de grsecurity de Linux 4.1.18 Ã  4.9.
 
-Team work with TimothÃ©e Ravier and Philippe TrÃ©buchet.
+Travail d'Ã©quipe avec TimothÃ©e Ravier et Philippe TrÃ©buchet.
 
-Updated after VServer upstream 2.3.9.7 released in 2018, by Thibaut Sautereau.
+Mise Ã  jour aprÃ¨s VServer upstream 2.3.9.9.7 sorti en 2018, par Thibaut Sautereau.
 
 Patch: 1502_vserver-vs2.3.9.7-anssi.patch
 ---
@@ -507,12 +506,12 @@ index 0000000000000..4464a0f456f7a
 +	"vroot[%d]_get_real_bdev: dev=%p[%lu,%d:%d]"
 +	"vroot[%d]_set_dev: dev=%p[%lu,%d:%d]"
 +	"vroot_get_real_bdev not set"
-+ 1   2	"cow_break_link(»%s«)"
-+	"temp copy »%s«"
++ 1   2	"cow_break_link(Â»%sÂ«)"
++	"temp copy Â»%sÂ«"
 + 2   4	"dentry_open(new): %p"
 +	"dentry_open(old): %p"
 +	"lookup_create(new): %p"
-+	"old path »%s«"
++	"old path Â»%sÂ«"
 +	"path_lookup(old): %d"
 +	"vfs_create(new): %d"
 +	"vfs_rename: %d"
@@ -580,7 +579,7 @@ index 0000000000000..4464a0f456f7a
 +
 +debug_tag:
 +
-+ 7  80	"dx_parse_tag(»%s«): %d:#%d"
++ 7  80	"dx_parse_tag(Â»%sÂ«): %d:#%d"
 +	"dx_propagate_tag(%p[#%lu.%d]): %d,%d"
 +
 +debug_xid:
@@ -809,12 +808,12 @@ index 0000000000000..64176135c6ae7
 +/*
 + *  linux/drivers/block/vroot.c
 + *
-+ *  written by Herbert Pötzl, 9/11/2002
-+ *  ported to 2.6.10 by Herbert Pötzl, 30/12/2004
++ *  written by Herbert PÃ¶tzl, 9/11/2002
++ *  ported to 2.6.10 by Herbert PÃ¶tzl, 30/12/2004
 + *
 + *  based on the loop.c code by Theodore Ts'o.
 + *
-+ * Copyright (C) 2002-2007 by Herbert Pötzl.
++ * Copyright (C) 2002-2007 by Herbert PÃ¶tzl.
 + * Redistribution of this file is permitted under the
 + * GNU General Public License.
 + *
@@ -992,7 +991,7 @@ index 0000000000000..64176135c6ae7
 +MODULE_LICENSE("GPL");
 +MODULE_ALIAS_BLOCKDEV_MAJOR(VROOT_MAJOR);
 +
-+MODULE_AUTHOR ("Herbert Pötzl");
++MODULE_AUTHOR ("Herbert PÃ¶tzl");
 +MODULE_DESCRIPTION ("Virtual Root Device Mapper");
 +
 +
@@ -7354,10 +7353,10 @@ index 0000000000000..5e1d79730b89a
 +/*
 + * include/linux/vroot.h
 + *
-+ * written by Herbert Pötzl, 9/11/2002
-+ * ported to 2.6 by Herbert Pötzl, 30/12/2004
++ * written by Herbert PÃ¶tzl, 9/11/2002
++ * ported to 2.6 by Herbert PÃ¶tzl, 30/12/2004
 + *
-+ * Copyright (C) 2002-2007 by Herbert Pötzl.
++ * Copyright (C) 2002-2007 by Herbert PÃ¶tzl.
 + * Redistribution of this file is permitted under the
 + * GNU General Public License.
 + */
@@ -14816,7 +14815,7 @@ index 0000000000000..80dea241f88be
 + *
 + *  Virtual Server: Context Accounting
 + *
-+ *  Copyright (C) 2006-2007 Herbert Pötzl
++ *  Copyright (C) 2006-2007 Herbert PÃ¶tzl
 + *
 + *  V0.01  added accounting stats
 + *
@@ -14954,7 +14953,7 @@ index 0000000000000..7e7b803dcd98e
 + *
 + *  Virtual Server: Context Support
 + *
-+ *  Copyright (C) 2003-2011  Herbert Pötzl
++ *  Copyright (C) 2003-2011  Herbert PÃ¶tzl
 + *
 + *  V0.01  context helper
 + *  V0.02  vx_ctx_kill syscall command
@@ -16079,7 +16078,7 @@ index 0000000000000..18de814e0a323
 + *
 + *  Virtual Server: Context Virtualization
 + *
-+ *  Copyright (C) 2004-2007  Herbert Pötzl
++ *  Copyright (C) 2004-2007  Herbert PÃ¶tzl
 + *
 + *  V0.01  broken out from limit.c
 + *  V0.02  added utsname stuff
@@ -16638,7 +16637,7 @@ index 0000000000000..22cf710ff7379
 +/*
 + *  kernel/vserver/debug.c
 + *
-+ *  Copyright (C) 2005-2007 Herbert Pötzl
++ *  Copyright (C) 2005-2007 Herbert PÃ¶tzl
 + *
 + *  V0.01  vx_info dump support
 + *
@@ -16678,7 +16677,7 @@ index 0000000000000..3c46a944efecf
 + *
 + *  Linux-VServer: Device Support
 + *
-+ *  Copyright (C) 2006  Herbert Pötzl
++ *  Copyright (C) 2006  Herbert PÃ¶tzl
 + *  Copyright (C) 2007  Daniel Hokka Zakrisson
 + *
 + *  V0.01  device mapping basics
@@ -17127,7 +17126,7 @@ index 0000000000000..d00fd8bb3b14c
 + *
 + *  Virtual Server: Context Disk Limits
 + *
-+ *  Copyright (C) 2004-2009  Herbert Pötzl
++ *  Copyright (C) 2004-2009  Herbert PÃ¶tzl
 + *
 + *  V0.01  initial version
 + *  V0.02  compat32 splitup
@@ -17661,7 +17660,7 @@ index 0000000000000..fd362890f7eba
 + *
 + *  Virtual Context Support
 + *
-+ *  Copyright (C) 2004-2007  Herbert Pötzl
++ *  Copyright (C) 2004-2007  Herbert PÃ¶tzl
 + *
 + *  V0.01  basic helper
 + *
@@ -17909,7 +17908,7 @@ index 0000000000000..e3e0712b3ce71
 + *
 + *  Virtual Context History Backtrace
 + *
-+ *  Copyright (C) 2004-2007  Herbert Pötzl
++ *  Copyright (C) 2004-2007  Herbert PÃ¶tzl
 + *
 + *  V0.01  basic structure
 + *  V0.02  hash/unhash and trace
@@ -18415,7 +18414,7 @@ index 0000000000000..5dd38fed6784d
 + *
 + *  Virtual Server Init
 + *
-+ *  Copyright (C) 2004-2007  Herbert Pötzl
++ *  Copyright (C) 2004-2007  Herbert PÃ¶tzl
 + *
 + *  V0.01  basic structure
 + *
@@ -18467,7 +18466,7 @@ index 0000000000000..73cc3ded9f8f8
 + *
 + *  Virtual Server: File System Support
 + *
-+ *  Copyright (C) 2004-2007  Herbert Pötzl
++ *  Copyright (C) 2004-2007  Herbert PÃ¶tzl
 + *
 + *  V0.01  separated from vcontext V0.05
 + *  V0.02  moved to tag (instead of xid)
@@ -18913,7 +18912,7 @@ index 0000000000000..c1db3147789a4
 + *
 + *  Virtual Server: Context Limits
 + *
-+ *  Copyright (C) 2004-2010  Herbert Pötzl
++ *  Copyright (C) 2004-2010  Herbert PÃ¶tzl
 + *
 + *  V0.01  broken out from vcontext V0.05
 + *  V0.02  changed vcmds to vxi arg
@@ -19405,7 +19404,7 @@ index 0000000000000..cd18ad43c5d84
 + *
 + *  Virtual Server: Network Support
 + *
-+ *  Copyright (C) 2003-2007  Herbert Pötzl
++ *  Copyright (C) 2003-2007  Herbert PÃ¶tzl
 + *
 + *  V0.01  broken out from vcontext V0.05
 + *  V0.02  cleaned up implementation
@@ -20464,7 +20463,7 @@ index 0000000000000..aedb7dba9e6e5
 + *
 + *  Virtual Context Support
 + *
-+ *  Copyright (C) 2003-2011  Herbert Pötzl
++ *  Copyright (C) 2003-2011  Herbert PÃ¶tzl
 + *
 + *  V0.01  basic structure
 + *  V0.02  adaptation vs1.3.0
@@ -21510,7 +21509,7 @@ index 0000000000000..192eb3b8da7ff
 + *
 + *  Virtual Server: Scheduler Support
 + *
-+ *  Copyright (C) 2004-2010  Herbert Pötzl
++ *  Copyright (C) 2004-2010  Herbert PÃ¶tzl
 + *
 + *  V0.01  adapted Sam Vilains version to 2.6.3
 + *  V0.02  removed legacy interface
@@ -21670,7 +21669,7 @@ index 0000000000000..2c72a86196258
 + *
 + *  Virtual Server: Signal Support
 + *
-+ *  Copyright (C) 2003-2007  Herbert Pötzl
++ *  Copyright (C) 2003-2007  Herbert PÃ¶tzl
 + *
 + *  V0.01  broken out from vcontext V0.05
 + *  V0.02  changed vcmds to vxi arg
@@ -21810,7 +21809,7 @@ index 0000000000000..d4a8ea4c97c9d
 + *
 + *  Virtual Server: Context Space Support
 + *
-+ *  Copyright (C) 2003-2010  Herbert Pötzl
++ *  Copyright (C) 2003-2010  Herbert PÃ¶tzl
 + *
 + *  V0.01  broken out from context.c 0.07
 + *  V0.02  added task locking for namespace
@@ -22269,7 +22268,7 @@ index 0000000000000..b9e121051e91d
 + *
 + *  Virtual Server: Syscall Switch
 + *
-+ *  Copyright (C) 2003-2011  Herbert Pötzl
++ *  Copyright (C) 2003-2011  Herbert PÃ¶tzl
 + *
 + *  V0.01  syscall switch
 + *  V0.02  added signal to context
@@ -22831,7 +22830,7 @@ index 0000000000000..6181382a09cc0
 + *
 + *  Virtual Context Support
 + *
-+ *  Copyright (C) 2004-2007  Herbert Pötzl
++ *  Copyright (C) 2004-2007  Herbert PÃ¶tzl
 + *
 + *  V0.01  basic structure
 + *
@@ -23086,7 +23085,7 @@ index 0000000000000..0841fdca756bc
 + *
 + *  Virtual Server: Shallow Tag Space
 + *
-+ *  Copyright (C) 2007  Herbert Pötzl
++ *  Copyright (C) 2007  Herbert PÃ¶tzl
 + *
 + *  V0.01  basic implementation
 + *
