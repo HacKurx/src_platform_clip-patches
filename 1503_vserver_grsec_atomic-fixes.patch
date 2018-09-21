@@ -4,13 +4,13 @@ Date: Wed, 15 May 2013 15:11:19 +0200
 Subject: [PATCH 03/32] clip: vserver/grsec: Fix atomic operations for
  PAX_REFCOUNT
 
-Miscellaneous fixups for the vserver + grsec merge, anything other than
-failed hunks needed to make the two patches work together. Mostly
-PAX_REFCOUNT fixes.
+Corrections diverses pour la fusion vserver + grsec, 
+tout ce qui n'est pas des hunks ratés sont nécessaires 
+pour que les deux patchs fonctionnent ensemble. 
+La plupart du temps PAX_REFCOUNT correction.
 
-The grsecurity patch turns the users member of init_fs (struct fs_struct)
-into an atomic_t. Use fonctions from arch/x86/include/asm/atomic.h to
-properly increment/decrement the users value.
+Le patch grsecurity transforme un utilisateur membre de init_fs (struct fs_struct) en atomic_t.
+Utilisez les fonctions de arch/x86/include/asm/atomic.h pour augmenter/diminuer correctement la valeur utilisateur.
 
 Patch: 1503_vserver_grsec_atomic-fixes.patch
 ---
