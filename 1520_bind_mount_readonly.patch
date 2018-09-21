@@ -3,8 +3,8 @@ From: Vincent Strubel <clipos@ssi.gouv.fr>
 Date: Wed, 3 Aug 2011 17:16:37 +0200
 Subject: [PATCH 20/32] clip: fs: Fix 'readonly' bind mounts
 
-Fix 'readonly' bind mounts that got dropped from vserver patch somewhere in
-between 2.6.38 and 2.6.39.
+Correction des montages de liaison 'en lecture seule' qui ont été supprimés 
+du patch vserver quelque part entre 2.6.38 et 2.6.39.
 
 Patch: 1520_bind_mount_readonly.patch
 ---
