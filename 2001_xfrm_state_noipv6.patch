@@ -4,8 +4,8 @@ Date: Wed, 22 Apr 2009 14:06:40 +0200
 Subject: [PATCH 30/32] clip: net/xfrm: Fix xfrm_state_init() when IPv6 is not
  supported
 
-Fix xfrm_state_init() with AF_UNSPEC selectors (for tunnel mode), when
-IPv6 is not supported.
+Correction de xfrm_state_init() avec les sélecteurs AF_UNSPEC (pour le mode tunnel), 
+quand IPv6 n'est pas supporté.
 
 Patch: 2001_xfrm_state_noipv6.patch
 ---
