@@ -1,200 +1,200 @@
-Set of Linux patches for CLIP OS
+Jeu de correctifs Linux pour CLIP OS
 --------------------------------
 
-This is the patchset for sys-kernel/clip-kernel 4.9.74.
+C'est le patchset pour sys-kernel/clip-kernel 4.9.74.
 
-It follows the same conventions as gentoo-sources's genpatch, and incorporates
-some of the unipatches from there.
+Il suit les mêmes conventions que le genpatch de gentoo-sources, et intègre
+quelques uns des patchs d'ici.
 
-Patchset Numbering Scheme
+Schéma de numérotation des patchs
 -------------------------
 
 FIXES
-1000-1400       linux-stable
-1400-1500       linux-stable queue
-1500-1700       security
-1500-1600       security features
-1600-1700       security fixes
-1700-1800       architecture-related
-1800-1900       mm/scheduling/misc
-1900-2000       filesystems
-2000-2100       networking core
-2100-2200       storage core
-2200-2300       power management (ACPI, APM)
-2300-2400       bus (USB, IEEE1394, PCI, PCMCIA, ...)
-2400-2500       network drivers
-2500-2600       storage drivers
-2600-2700       input
-2700-2900       media (graphics, sound, tv)
-2900-3000       other
-3000-4000       reserved
+1000-1400 linux-stable
+1400-1500 file d'attente linux-stable
+1500-1700 sécurité
+1500-1600 éléments de sécurité
+1600-1700 corrections de sécurité
+1700-1800 lié à l'architecture
+1800-1900 mm/calibrage/misc.
+1900-2000 systèmes de fichiers
+2000-2100 Cœur de réseautage
+2100-2200 noyau de stockage
+2200-2300 gestion de l'alimentation (ACPI, APM)
+Bus 2300-2400 (USB, IEEE1394, PCI, PCMCIA, ....)
+2400-2500 pilotes réseau
+2500-2600 pilotes de stockage
+2600-2700 entrées
+2700-2900 médias (graphiques, son, télévision)
+2900-3000 autres
+3000-4000 réservé
 
-FEATURES
-4000-4100       network
-4100-4200       storage
-4200-4300       graphics
-4300-4400       filesystem
-4400-4500       other
+CARACTÉRISTIQUES
+Réseau 4000-4100
+4100-4200 entreposage
+4200-4300 graphiques
+4300-4400 système de fichiers
+4400-4500 autres
 
-Individual Patch Descriptions:
+Descriptions des correctifs individuels :
 ------------------------------
 
-Patch:  1500_grsec_3.1-4.9.74.patch
-From:   https://github.com/minipli/linux-unofficial_grsec
-Desc:   Latest grsecurity patch: grsec-3.1-4.9.74
+Patch :  1500_grsec_3.1-4.9.9.74.patch
+De : https://github.com/minipli/linux-unofficial_grsec
+Desc : Dernier correctif de grsecurity : grsec-3.1-4.9.74
 
-Patch:  1501_grsec_fix_dentry_refcounting.patch
-From:   Thibaut Sautereau <clipos@ssi.gouv.fr>
-Desc:   Fix dentry reference counting
+Patch :  1501_grsec_fix_dentry_dentry_refcounting.patch
+De :   Thibaut Sautereau <clipos@ssi.gouv.fr>>
+Desc : Correction du comptage de référence de dentry
 
-Patch:  1502_vserver-vs2.3.9.7-anssi.patch
-From:   http://linux-vserver.org and ANSSI
-Desc:   Experimental port of the VServer patch vs2.3.8.4 on top of grsecurity
-		from Linux 4.1.18 to 4.9
+Patch :  1502_vserver-vs2.3.9.7-anssi.patch
+De : http://linux-vserver.org et ANSSI
+Desc : Port expérimental du patch VServer vs2.3.8.4 en plus de grsecurity
+		de Linux 4.1.18 à 4.9
 
-Patch:  1503_vserver_grsec_atomic-fix.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Miscellaneous fixups for the vserver + grsec merge, anything
-        other than failed hunks needed to make the two patches work
-        together. Mostly PAX_REFCOUNT fixes.
+Patch :  1503_vserver_grsec_atomic-fix.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Divers correctifs pour la fusion vserver + grsec, n'importe quoi
+        à part les morceaux ratés nécessaires pour faire fonctionner les deux patchs.
+        ensemble. La plupart du temps PAX_REFCOUNT corrige.
 
-Patch:  1504_vserver-nsproxy-and-leak-fixes-1.patch
-From:   Brad Spengler <spender@grsecurity.net>
-Desc:   Fix vserver nsproxy access/locking and prevent vserver
-        infoleaks.
+Patch :  1504_vserver-nsproxy-and-leak-fixes-1.patch
+De :   Brad Spengler <spender@grsecurity.net>
+Desc : Correction de l'accès/verrouillage nsproxy vserver et prévention vserver
+        des fuites d'information.
 
-Patch:  1504_vserver-nsproxy-and-leak-fixes-2.patch
-From:   Philippe Trébuchet <clipos@ssi.gouv.fr>
-Desc:   vserver/grsec: Fix vserver nsproxy access and infoleaks
+Patch :  1504_vserver-nsproxy-and-leak-fixes-2.patch
+De :   Philippe Trébuchet <clipos@ssi.gouv.fr>>
+Desc : vserver/grsec : Correction de l'accès et des fuites d'information nsproxy vserver
 
-Patch:  1505_vserver-proc-fix.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   TODO.
+Patch :  1505_vserver-proc-fix.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : TODO.
 
-Patch:  1506_vserver_allow_watch_context_proc_pid.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Allow WATCH context to see every /proc/<pid>.
+Patch :  1506_vserver_allow_watch_context_context_proc_pid.patch_de_serveur
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Permet au contexte WATCH de voir chaque /proc/<pid>.
 
-Patch:  1507_vserver-owner-xid.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Add xid/nid to iptables owner.
+Patch :  1507_vserver-owner-xid.patch.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Ajouter xid/nid au propriétaire d'iptables.
 
-Patch:	1508_vserver_grsec_lockref-fixes.patch
-From:	Thibaut Sautereau <clipos@ssi.gouv.fr>
-Desc:	vserver/grsec: Fix lockref access operations
+Patch :	1508_vserver_grsec_lockref-fixes.patch
+De :	Thibaut Sautereau <clipos@ssi.gouv.fr>>
+Desc : vserver/grsec : Correction des opérations d'accès lockref
 
-Patch:  1510_grsec_tpe_strict.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Adds a stricter TPE mode to grsec's implementation
+Patch :  1510_grsec_grsec_tpe_strict.patch.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Ajoute un mode TPE plus strict à l'implémentation du grsec
 
-Patch:  1511_vserver_ping_map_addr.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Map ipv4 addrs in ping socket bind().
+Patch :  1511_vserver_vserver_ping_map_addr.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Map ipv4 addrs in ping socket bind().
 
-Patch:  1512_init_kill_all.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Allows init to kill every process on the system, regardless of
-        vserver context boundaries.
+Patch :  1512_init_kill_all.patch.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Permet à init de tuer tous les processus sur le système, indépendamment de
+        par rapport aux limites du contexte du serveur.
 
-Patch:  1513_vserver_hide_proc_vinfo.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Do not show /proc/<tgid>/{v,n}info when the VXF_HIDE_VINFO flag
-        is set, rather than showing them as empty.
+Patch :  1513_vserver_vserver_hide_proc_vinfo.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Ne pas afficher /proc/<tgid>/{v,n}info lorsque l'indicateur VXF_HIDE_VINFO
+        est activé, plutôt que de les afficher comme vides.
 
-Patch:  1514_anon_inodes_readonly.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Mount the anonymous inode FS as RDONLY|NOATIME|NOLOCK, and make
-        the anonymous inode IMMUTABLE, to avoid creating a communication
-        channel between jails.
+Patch :  1514_anon_inodes_inodes_readonly.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Monter l'inode anonyme FS comme RDONLY|NOATIME|NOLOCK, et make
+        l'inode anonyme IMMUTABLE, pour éviter de créer une communication
+        entre les prisons.
 
-Patch:  1515_randomize_va_disable.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Disable the randomize_va_space sysctl when PAX_ASLR is active.
+Patch :  1515_randomize_va_disable.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Désactive le sysctl randomize_va_space lorsque PAX_ASLR est actif.
 
-Patch:  1516_sysctl_disable.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Disable some 'dangerous' sysctls : kernel.hotplug,
+Patch :  1516_sysctl_disable.patch.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Désactive quelques sysctls'dangereux' : kernel.hotplug,
         kernel.vshelper, kernel.suid_dumpable, vm.vdso_enable.
 
-Patch:  1517_vserver_devpts_ptmx_visibility.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Add an exception in vserver's devpts xid tagging, so that
-        /dev/pts/ptmx remains visible in non-ADMIN contexts.
+Patch :  1517_vserver_devpts_ptmx_visibility.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Ajout d'une exception dans le balisage devpts xid de vserver, de sorte que
+        /dev/pts/ptmx reste visible dans les contextes non-ADMIN.
 
-Patch:  1518_vserver_no_lookup_warnings.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Remove '<task> did lookup hidden <file>' vserver warnings, which
-        tend to clobber the logs and are much less significant than
-        other vserver warnings.
+Patch :  1518_vserver_no_lookup_warnings.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Suppression de'<task> n'a pas cherché caché <file>' vserver avertissements, qui
+        ont tendance à écraser les billes de bois et sont beaucoup moins importantes que celles des
+        autres avertissements vserver.
 
-Patch:  1519_vserver_nx_nosp.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Add a 'NO_SP' network context flag to vserver. Packets can only
-        be emitted or received without a SP from the ADMIN context, and
-        those non-ADMIN contexts that have the NO_SP flag.
+Patch :  1519_vserver_nx_nx_nosp.patch.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Ajoute un indicateur de contexte réseau'NO_SP' à vserver. Les paquets ne peuvent seulement
+        être émis ou reçus sans PS dans le contexte ADMIN, et
+        les contextes non-ADMIN qui ont l'indicateur NO_SP.
 
-Patch:  1520_bind_mount_readonly.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Fix 'readonly' bind mounts that got dropped from vserver patch
-        somewhere in between 2.6.38 and 2.6.39.
+Patch :  1520_mount_bind_mount_readonly.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Correction des montages de liaison'en lecture seule' qui ont été supprimés du patch vserver.
+        entre 2.6.38 et 2.6.39.
 
-Patch:  1521_audit_xid.patch
-From:   ANSSI <clipos@ssi.gouv.fr>
-Desc:   Add vserver context id (xid) information to audit messages.
+Patch :  1521_audit_xid.patch.patch
+De :   ANSSI <clipos@ssi.gouv.fr>
+Desc : Ajout d'informations sur l'identifiant de contexte vserver (xid) aux messages d'audit.
 
-Patch:  1522_grsec_brute_timeout.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Reduce GRKERNSEC_BRUTE user ban from 15 minutes to 30 seconds.
+Patch :  1522_grsec_brute_timeout.patch.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Réduire l'interdiction d'utilisateur GRKERNSEC_BRUTE de 15 minutes à 30 secondes.
 
-Patch:  1523_extra_rawio_checks.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>, inspired by
+Patch :  1523_extra_rawio_checks.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>, inspiré par
         http://lkml.org/lkml/2012/9/4/220
-Desc:   Check for CAP_SYS_RAWIO before allowing any PCI configuration.
+Desc : Vérifiez CAP_SYS_RAWIO avant d'autoriser toute configuration PCI.
 
-Patch:  1524_sound_core_vserver_context.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Add filtering on all sound device syscalls (except close()) to
-        only allow them in either the ADMIN vserver context or a context
-        whose xid matches the value of the 'kernel.clip.sound_xid'
+Patch :  1524_sound_core_core_vserver_context.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Ajout du filtrage sur tous les appels système des périphériques audio (sauf close()) à
+        ne les autoriser que dans le contexte ADMIN vserver ou dans un contexte
+        dont le xid correspond à la valeur du'kernel.clip.sound.sound_xid'.
         sysctl.
 
-Patch:  1702_get_random_bytes_rdrand.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   When arch_get_random() is available (e.g. rdrand on IvyBridge),
-        do not use it exclusively for get_random_bytes(), but mix its
-        output with entropy extracted from the non-blocking pool.
+Patch :  1702_get_aléatoire_octets_rdrand.patch.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Quand arch_get_random() est disponible (par exemple rdrand sur IvyBridge),
+        ne l'utilisez pas exclusivement pour get_random_bytes(), mais mélangez son nom de fichier
+        avec l'entropie extraite du pool non bloquant.
 
-Patch:  1710_ARM_imx6q_sdma_firmware.patch
-From:   ANSSI <clipos@ssi.gouv.fr>
-Desc:   Missing firmware for ARM board Freescale iMX6 SDMA in vanilla
+Patch :  1710_ARM_imx6q_imx6q_sdma_firmware.patch
+De :   ANSSI <clipos@ssi.gouv.fr>
+Desc : Firmware manquant pour la carte ARM Freescale iMX6 SDMA dans vanilla
         sources.
 
-Patch:  1720_ARM_eurisko_dts.patch
-From:   Arnaud Ebalard <clipos@ssi.gouv.fr>
-Desc:   Add DTS for Eurisko board
+Patch :  1720_ARM_eurisko_dts.patch.patch
+De :   Arnaud Ebalard <clipos@ssi.gouv.fr>>
+Desc : Ajouter DTS pour carte Eurisko
 
-Patch:  1901_open_mayexec.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Add support for a O_MAYEXEC flag on sys_open(). When this flag
-        is passed, sys_open will check that the mount options for the
-        underlying vfsmount do not prevent execution. This may allow
-        an interpreter to check exec permissions before reading commands
-        from a file, and thus enforce W^X at their level.
+Patch :  1901_ouvrir_mayexec.patch.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Ajout du support d'un drapeau O_MAYEXEC sur sys_open(). Quand ce drapeau
+        est passé, sys_open vérifiera que les options de montage de l'option
+        vfsmount sous-jacent n'empêchent pas l'exécution. Cela peut permettre
+        un interpréteur pour vérifier les permissions exécutables avant de lire les commandes
+        à partir d'un fichier, et donc appliquer W^X à leur niveau.
 
-Patch:  1902_umask_strict.patch
-From:   Mickaël Salaün <clipos@ssi.gouv.fr>
-Desc:   Set default umask to 0077.
+Patch :  1902_masque_de_masque.patch.strict.1902
+De :   Mickaël Salaün <clipos@ssi.gouv.fr>
+Desc : Définir umask par défaut à 0077.
 
-Patch:  2001_xfrm_state_noipv6.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Fix xfrm_state_init() with AF_UNSPEC selectors (for tunnel
-        mode), when IPV6 is not supported.
+Patch : 2001_xfrm_state_noipv6.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Correction de xfrm_state_init() avec les sélecteurs AF_UNSPEC (pour tunnel
+        ), lorsque IPV6 n'est pas pris en charge.
 
-Patch:  2002_loopback_classB.patch
-From:   Vincent Strubel <clipos@ssi.gouv.fr>
-Desc:   Make 127.0.0.1/16, rather than /8, the default loopback network,
-        thus freeing some local addresses for other contexts.
+Patch : 2002_loopback_classB.patch
+De :   Vincent Strubel <clipos@ssi.gouv.fr>
+Desc : Faire de 127.0.0.0.1/16, plutôt que /8, le réseau en boucle par défaut,
+        libérant ainsi quelques adresses locales pour d'autres contextes.
 
-Patch:  2403_ath5k-fix-resume.patch
-From:   https://lists.ath5k.org/pipermail/ath5k-devel/2011-March/004638.html
-Desc:   Prevent oops in ath5k_hw_set_coverage
+Patch : 2403_ath5k-fix-resume.patch
+De : https://lists.ath5k.org/pipermail/ath5k-devel/2011-March/004638.html
+Desc : Prévenir les oops dans la couverture ath5k_hw_set_coverage
