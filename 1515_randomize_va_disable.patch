@@ -4,7 +4,7 @@ Date: Thu, 1 Jan 2009 00:00:00 +0200
 Subject: [PATCH 15/32] clip: grsec/x86: Disable randomize_va_space sysctl if
  PAX_ASLR is set
 
-Disable randomize_va_space when PAX_ASLR is on
+Désactiver randomize_va_space lorsque PAX_ASLR est activé
 
 Original version used to set randomize_va_disable to 1. Now set to 2.
 
