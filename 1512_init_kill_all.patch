@@ -4,11 +4,11 @@ Date: Mon, 1 Jan 2007 00:00:00 +0200
 Subject: [PATCH 12/32] clip: vserver: Allow init to kill every process on the
  system
 
-Allows init to kill every process on the system, regardless of vserver
-context boundaries.
+Permet à init de tuer tous les processus du système, 
+indépendamment des limites du contexte vserver.
 
-When pid 1 is killed the signal is broadcasted to all the processes of
-the machine regardless of their xid.
+Lorsque le pid 1 est tué, le signal est diffusé à tous 
+les processus de la machine, quel que soit leur xid.
 
 Patch: 1512_init_kill_all.patch
 ---
